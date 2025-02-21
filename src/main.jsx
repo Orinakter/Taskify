@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import MainLayOut from './Root/MainLayOut.jsx';
 import HomePage from './Pages/HomePage';
+import TaskManagement from './Pages/TaskManagement.jsx';
+import Login from './Pages/Login.jsx';
+import Register from './Pages/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,18 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<HomePage></HomePage>
+      },
+      {
+        path:"/task-management",
+        element:<TaskManagement></TaskManagement>
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
+      },
+      {
+        path:"/register",
+        element:<Register></Register>
       }
     ]
   },

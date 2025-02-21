@@ -1,5 +1,6 @@
 import React from 'react';
 import banner from '../assets/banner.jpg'
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -27,9 +28,9 @@ const Banner = () => {
           more effortlessly!
         </p>
         <div className="flex justify-center items-center mt-8">
-         {/* <Link to={'/task'}>
-         <button className="bg-blue-800 cursor-pointer text-white py-3 px-8 rounded-md font-semibold">Get Started</button>
-         </Link> */}
+         <Link to={'/task-management'}>
+         <button className="bg-gray-900 cursor-pointer text-white py-3 px-8 rounded-md font-semibold">Get Started</button>
+         </Link>
         </div>
       </div>
     </div>

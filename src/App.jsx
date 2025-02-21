@@ -8,8 +8,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="w-[95%] lg:max-w-[1200px] p-5 mx-auto">
-      <TaskBoard />
+    <div>
+      
     </div>
   );
 }
