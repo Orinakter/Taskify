@@ -4,6 +4,7 @@ import axios from "axios";
 import { Url } from "../server";
 import TaskModal from "./TaskModal";
 import { authorizedContext } from "../AuthProvider/AuthProvider";
+import { MdDelete } from "react-icons/md";
 const initialTasks = {
   todo: [],
   inProgress: [],
@@ -121,9 +122,10 @@ const TaskBoard = () => {
           user={user}
         />
       </div>
+      
 
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           {Object.entries(tasks).map(([columnKey, columnTasks]) => (
             <Droppable key={columnKey} droppableId={columnKey} mode="standard">
               {(provided) => (
@@ -162,13 +164,13 @@ const TaskBoard = () => {
                               {task.description}
                             </p>
                           </div>
-                          <p
+                          <button
                             onClick={() => handleDeleteTask(task._id)}
                             title="delete"
-                            className="text-red-600 mr-2 cursor-pointer text-[16px] font-bold"
+                            className="text-red-700 mr-2 text-xl cursor-pointer text-[16px] font-bold"
                           >
-                            X
-                          </p>
+                           <MdDelete />
+                          </button>
                         </div>
                       )}
                     </Draggable>

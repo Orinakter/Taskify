@@ -60,7 +60,7 @@ const Login = () => {
       <div className=" flex  items-center justify-center mt-12">
         <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl flex flex-col lg:flex-row overflow-hidden">
           <div className="lg:w-1/2 p-10">
-            <h2 className="text-2xl text-blue-500 text-center font-bold mb-4">
+            <h2 className="text-2xl text-gray-900 text-center font-bold mb-4">
               Welcome to Taskify
             </h2>
             <img
@@ -71,16 +71,16 @@ const Login = () => {
           </div>
 
           <div className="lg:w-1/2 p-10">
-            <h2 className="text-3xl font-bold mb-3 text-blue-500 text-center">
+            <h2 className="text-3xl font-bold mb-3 text-gray-900">
               Log In your Account
             </h2>
             <form onSubmit={loginFormHandler}>
               <div className="form-control mt-2">
                 <label className="flex justify-start items-center gap-2 mb-3 mt-4">
-                  <span className="text-xl text-blue-500">
+                  <span className="text-xl text-gray-900">
                     <MdOutlineMail />
                   </span>
-                  <span className="text-blue-500">Email</span>
+                  <span className="text-gray-900">Email</span>
                 </label>
                 <input
                   type="email"
@@ -93,10 +93,10 @@ const Login = () => {
 
               <div className="form-control">
                 <label className="flex justify-start items-center gap-2 mb-3 mt-2">
-                  <span className="text-xl text-blue-500">
+                  <span className="text-xl text-gray-900">
                     <RiLockPasswordFill />
                   </span>
-                  <span className="text-blue-500">Password</span>
+                  <span className="text-gray-900">Password</span>
                 </label>
                 <input
                   type="password"
@@ -109,7 +109,7 @@ const Login = () => {
                 <label className="label text-base">
                   <a
                     href="#"
-                    className="label-text-alt link link-hover text-blue-500"
+                    className="label-text-alt link link-hover text-gray-900"
                   >
                     Forgot password?
                   </a>
@@ -117,7 +117,7 @@ const Login = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className=" btn w-full bg-gradient-to-r from-blue-500 to-black text-white py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition duration-300">
+                <button className=" btn w-full bg-gray-900 text-white font-bold">
                   Login
                 </button>
               </div>
@@ -144,7 +144,7 @@ const Login = () => {
               Don't have an Account?
               <Link to="/register">
                 {" "}
-                <span className="text-blue-500 hover:underline">
+                <span className="text-gray-900 font-bold hover:underline">
                   Register Now
                 </span>
               </Link>

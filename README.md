@@ -28,7 +28,7 @@ Follow these steps to install and run Taskify locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/taskify.git
+   git clone https://github.com/Orinakter/Taskify.git
    cd taskify
    ```
 2. **Install dependencies:**
