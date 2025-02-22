@@ -1,12 +1,13 @@
-import React from 'react';
+
 import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { MdEmail, MdOutlineMail } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authorizedContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
+import { RiLockPasswordFill } from 'react-icons/ri';
+
 
 const Login = () => {
     const { loginUser, googleLoginBtn } = useContext(authorizedContext);
@@ -55,14 +56,12 @@ const Login = () => {
     return (
         <div>
             <div className="">
-      <Helmet>
-        <title>Login || ArtifactLog</title>
-      </Helmet>
+      
       <div className=" flex  items-center justify-center mt-12">
         <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl flex flex-col lg:flex-row overflow-hidden">
           <div className="lg:w-1/2 p-10">
             <h2 className="text-2xl text-blue-500 text-center font-bold mb-4">
-              Welcome to ArtifactLog
+              Welcome to Taskify
             </h2>
             <img
               src="https://i.ibb.co.com/JcsWsPD/tablet-login-concept-illustration-114360-7963.jpg"
@@ -107,7 +106,7 @@ const Login = () => {
                   required
                 />
 
-                <label className="label text-xl">
+                <label className="label text-base">
                   <a
                     href="#"
                     className="label-text-alt link link-hover text-blue-500"
@@ -133,7 +132,7 @@ const Login = () => {
             <div className="text-center flex items-center gap-3">
               <button
                 onClick={googleLoginHandler}
-                className="btn w-full bg-white py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition duration-300"
+                className="flex justify-center items-center gap-3 btn w-full bg-white py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition duration-300"
               >
                 <span className="text-2xl">
                   <FcGoogle />

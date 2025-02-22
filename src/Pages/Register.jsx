@@ -1,13 +1,16 @@
-import React from 'react';
+
 import React, { useContext, useState } from "react";
-import { FaUserLarge } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
-import { MdOutlineMail, MdPhotoLibrary } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
+
+
+
 import { Link, useNavigate } from "react-router-dom";
 import { authorizedContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
-import { Helmet } from "react-helmet";
+import { RiLockPasswordFill } from 'react-icons/ri';
+import { FaUserLarge } from 'react-icons/fa6';
+import { MdOutlineMail, MdPhotoLibrary } from 'react-icons/md';
+import { FcGoogle } from 'react-icons/fc';
+
 
 const Register = () => {
     const {registerUser,userProfileUpdate,googleLoginBtn} = useContext(authorizedContext)
@@ -51,20 +54,37 @@ const Register = () => {
           toast.error("All fields are required")
           setErrorMessage(error.message);
         });
+       
     };
+    const googleRegisterHandler  = ()=>{
+      googleLoginBtn()
+  
+      .then(result=>{
+        if(state){
+          navigate(state)
+        }
+        else{
+          navigate("/")
+  
+        }
+        navigate("/")
+        toast.success ("User Login Successfully")
+      })
+      .catch(error=>{
+        setErrorMessage(error.message)
+        
+      })
+      
+  
+    }
     return (
-        <div>
-              <div className="">
-      <Helmet>
-        <title>
-        Register || ArtifactLog
-        </title>
-      </Helmet>
+      <div className="">
+      
       <div className="flex  items-center justify-center mt-12">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl flex flex-col lg:flex-row overflow-hidden">
         <div className="lg:w-1/2 p-10">
           <h2 className="text-2xl text-blue-500 text-center font-bold mb-4">
-            Welcome to ArtifactLog
+            Welcome to Taskify
           </h2>
           <img
             src="https://i.ibb.co.com/JcsWsPD/tablet-login-concept-illustration-114360-7963.jpg"
@@ -161,7 +181,6 @@ const Register = () => {
       </div>
     </div>
     </div>
-        </div>
     );
 };
 

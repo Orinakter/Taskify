@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Url } from "../server";
 import axios from "axios";
 
-const TaskModal = ({ isOpen, onClose,fetchTasks }) => {
+const TaskModal = ({ isOpen, onClose,fetchTasks, user }) => {
+  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("todo");
@@ -10,7 +11,7 @@ const TaskModal = ({ isOpen, onClose,fetchTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const data =  { title, description, category,email:"linkon@gmail.com" };
+    const data =  { title, description, category,email:user?.email };
     axios.post(Url+"/api/tasks",data)
     .then(res => {
         setTitle("");

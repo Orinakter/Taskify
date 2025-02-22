@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import axios from "axios";
 import { Url } from "../server";
 import TaskModal from "./TaskModal";
+import { authorizedContext } from "../AuthProvider/AuthProvider";
 const initialTasks = {
   todo: [],
   inProgress: [],
   done: [],
 };
 const TaskBoard = () => {
+  const { user, logOut } = useContext(authorizedContext);
+
   const [tasks, setTasks] = useState(initialTasks);
   const [taskToUpdate, setTaskToUpdate] = useState(null); // New state to hold task for API update
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,9 +42,7 @@ const TaskBoard = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get(
-        Url + "/api/tasks?email=linkon@gmail.com"
-      );
+      const response = await axios.get(Url + "/api/tasks?email=" + user?.email);
       const groupedTasks = {
         todo: response.data.filter((task) => task.category === "todo"),
         inProgress: response.data.filter(
@@ -102,20 +103,22 @@ const TaskBoard = () => {
   };
 
   return (
-    <div>
-      <div className="ml-5">
+    <div className="p-5">
+      <div className="  flex justify-between mx-10">
         <button
           onClick={toggleModal}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md"
+          className="px-4 py-2 bg-gray-900 text-white rounded-md"
         >
           Add Task
         </button>
+        
 
         {/* Modal */}
         <TaskModal
           fetchTasks={fetchTasks}
           isOpen={isModalOpen}
           onClose={toggleModal}
+          user={user}
         />
       </div>
 
