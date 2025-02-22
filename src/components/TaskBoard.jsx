@@ -28,9 +28,9 @@ const TaskBoard = () => {
           await axios.put(Url + `/api/tasks/${taskToUpdate._id}`, {
             category: taskToUpdate.category, // Ensure category is passed from taskToUpdate
           });
-          console.log("Task updated:", taskToUpdate);
+          // console.log("Task updated:", taskToUpdate);
         } catch (error) {
-          console.error("Error updating task:", error);
+          // console.error("Error updating task:", error);
         }
       };
       updateTask();
@@ -96,7 +96,7 @@ const TaskBoard = () => {
   };
 
   const handleDeleteTask = (id) => {
-    console.log(id);
+  
     axios.delete(Url + "/api/tasks/" + id).then((res) => {
       fetchTasks();
     });

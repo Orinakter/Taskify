@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { authorizedContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
-    const {user} = useContext(authorizedContext)
+    const {user,logOut} = useContext(authorizedContext)
     const signoutHandler = () => {
         logOut()
           .then(() => {
@@ -59,7 +59,7 @@ const Navbar = () => {
 
          </div>
          <div className="">
-            <button className='btn bg-gray-900 text-white rounded-lg'>LogOut</button>
+            <button onClick={signoutHandler} className='btn bg-gray-900 text-white rounded-lg'>LogOut</button>
 
          </div>
          
